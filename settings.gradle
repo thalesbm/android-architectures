@@ -13,4 +13,8 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AndroidArchitectures"
+
 include ':app'
+include ':mvp'
+include ':mvp-clean'
+include ':mvvm'
