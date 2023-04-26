@@ -10,7 +10,7 @@
         android:theme="@style/Theme.AndroidArchitectures"
         tools:targetApi="31">
         <activity
-            android:name="com.example.android.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
