@@ -1,5 +1,6 @@
 package com.example.android.mvvm.view.viewModel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,8 @@ import kotlin.coroutines.CoroutineContext
 class EmployerViewModel(private val repository: EmployerRepository) : ViewModel(),
     CoroutineScope {
 
+    private val TAG = EmployerViewModel::class::simpleName.name
+
     private val viewModelJob = SupervisorJob()
     private val state = MutableLiveData<EmployerState>()
     val viewState: LiveData<EmployerState> = state
@@ -21,6 +24,7 @@ class EmployerViewModel(private val repository: EmployerRepository) : ViewModel(
     override val coroutineContext: CoroutineContext = Dispatchers.Main + viewModelJob
 
     fun saveEmployer(model: EmployerModel) {
+        Log.d(TAG, "EmployerViewModel::saveEmployer()")
         launch {
             val isSaved = repository.saveEmployer(model)
             if (isSaved) {

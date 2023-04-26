@@ -14,6 +14,7 @@ class ClientPresenterImpl(
     private val TAG = ClientPresenterImpl::class::simpleName.name
 
     override fun saveClient(client: ClientModel) {
+        Log.d(TAG, "ClientPresenterImpl::saveClient()")
         repository.saveClient(client, object : DataCallback{
             override fun onSuccessful() {
                 Log.d(TAG, "ClientPresenterImpl::showSuccessfulMessage()")
