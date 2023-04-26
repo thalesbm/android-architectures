@@ -16,12 +16,12 @@ class ClientPresenterImpl(
     override fun saveClient(client: ClientModel) {
         repository.saveClient(client, object : DataCallback{
             override fun onSuccessful() {
-                Log.d(TAG, "ClientPresenterImpl::savedUserSuccessful()")
+                Log.d(TAG, "ClientPresenterImpl::showSuccessfulMessage()")
                 view.showSuccessfulMessage()
             }
 
             override fun onUnsuccessful() {
-                Log.d(TAG, "ClientPresenterImpl::savedUserUnsuccessful()")
+                Log.d(TAG, "ClientPresenterImpl::showUnsuccessfulMessage()")
                 view.showUnsuccessfulMessage()
             }
         })

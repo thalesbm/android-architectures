@@ -14,11 +14,11 @@ class ClientRemoteSourceImpl: ClientSource {
 
         if (random.nextBoolean()) {
             // user was saved with success
-            Log.d(TAG, "ClientRemoteSourceImpl::saveUser()::nextBoolean == true")
+            Log.d(TAG, "ClientRemoteSourceImpl::saveClient()::nextBoolean == true")
             callback.onSuccessful()
         } else {
             // it was not possible to save the user
-            Log.d(TAG, "ClientRemoteSourceImpl::saveUser()::nextBoolean == false")
+            Log.d(TAG, "ClientRemoteSourceImpl::saveClient()::nextBoolean == false")
             callback.onUnsuccessful()
         }
     }

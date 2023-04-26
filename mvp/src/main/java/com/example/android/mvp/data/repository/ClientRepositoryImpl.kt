@@ -17,11 +17,11 @@ class ClientRepositoryImpl(
         val random = Random()
 
         if (random.nextBoolean()) {
-            Log.d(TAG, "ClientRepositoryImpl::saveUser()::nextBoolean == true")
+            Log.d(TAG, "ClientRepositoryImpl::saveClient()::nextBoolean == true")
             remoteSource.saveClient(user, callback)
         } else {
             // it was not possible to save the user
-            Log.d(TAG, "ClientRepositoryImpl::saveUser()::nextBoolean == false")
+            Log.d(TAG, "ClientRepositoryImpl::saveClient()::nextBoolean == false")
             localSource.saveClient(user, callback)
         }
     }

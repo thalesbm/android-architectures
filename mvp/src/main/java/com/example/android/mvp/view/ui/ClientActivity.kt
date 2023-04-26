@@ -40,7 +40,7 @@ class ClientActivity : AppCompatActivity(), ClientView {
         val repository = ClientRepositoryImpl(localSource, remoteSource)
         val presenter = ClientPresenterImpl(this, repository)
 
-        val client = simulateUser()
+        val client = simulateClient()
         presenter.saveClient(client)
     }
 
@@ -54,7 +54,7 @@ class ClientActivity : AppCompatActivity(), ClientView {
         Toast.makeText(this, "showUnsuccessfulMessage()", Toast.LENGTH_LONG).show()
     }
 
-    private fun simulateUser() = ClientModel(
+    private fun simulateClient() = ClientModel(
         id =  1L,
         name = "Thales",
         surname = "Bertolini",

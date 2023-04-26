@@ -14,11 +14,11 @@ class ClientLocalSourceImpl: ClientSource {
 
         if (random.nextBoolean()) {
             // user was saved with success
-            Log.d(TAG, "ClientLocalSourceImpl::saveUser()::nextBoolean == true")
+            Log.d(TAG, "ClientLocalSourceImpl::saveClient()::nextBoolean == true")
             callback.onSuccessful()
         } else {
             // it was not possible to save the user
-            Log.d(TAG, "ClientLocalSourceImpl::saveUser()::nextBoolean == false")
+            Log.d(TAG, "ClientLocalSourceImpl::saveClient()::nextBoolean == false")
             callback.onUnsuccessful()
         }
     }
