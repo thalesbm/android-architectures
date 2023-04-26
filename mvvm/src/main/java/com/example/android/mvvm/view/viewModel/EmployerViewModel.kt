@@ -4,15 +4,15 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android.mvvm.data.repository.EmployerRepository
 import com.example.android.mvvm.domain.model.EmployerModel
+import com.example.android.mvvm.domain.useCase.EmployerUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class EmployerViewModel(private val repository: EmployerRepository) : ViewModel(),
+class EmployerViewModel(private val useCase: EmployerUseCase) : ViewModel(),
     CoroutineScope {
 
     private val TAG = EmployerViewModel::class::simpleName.name
@@ -26,7 +26,7 @@ class EmployerViewModel(private val repository: EmployerRepository) : ViewModel(
     fun saveEmployer(model: EmployerModel) {
         Log.d(TAG, "EmployerViewModel::saveEmployer()")
         launch {
-            val isSaved = repository.saveEmployer(model)
+            val isSaved = useCase.saveEmployer(model)
             if (isSaved) {
 
                 state.value = EmployerState.ShowSuccessfulMessage

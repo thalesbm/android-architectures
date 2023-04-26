@@ -1,7 +1,6 @@
 package com.example.android.mvvm.data.source
 
 import android.util.Log
-import com.example.android.mvvm.data.DataCallback
 import com.example.android.mvvm.domain.model.EmployerModel
 import java.util.*
 
